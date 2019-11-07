@@ -1,7 +1,7 @@
 require 'oystercard'
 
 describe Oystercard do
-  subject(:oystercard) {Oystercard.new}
+  #subject(:oystercard) {Oystercard.new}
   it 'has a balance of zero' do
     expect(subject.balance).to eq(0)
   end
@@ -18,9 +18,11 @@ describe Oystercard do
 
   it 'can deduct fare from the card' do
     #minimum = Oystercard::Minimum
-    deduct = Oystercard.new
-    expect {subject.deduct}.to respond_to(:money)
-    #it { is_expected.to respond_to(:deduct).with(1).argument }
+    # #oyster = Oystercard.new
+     subject.balance = 10
+     subject.deduct(5)
+    expect(subject.balance).to eq_to(5)
+    #expect {subject.deduct}.to respond_to(:money)
 end
 end
 
